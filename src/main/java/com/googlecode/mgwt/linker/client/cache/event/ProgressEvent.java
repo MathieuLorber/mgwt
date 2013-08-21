@@ -35,14 +35,29 @@ public class ProgressEvent extends GwtEvent<ProgressEvent.Handler> {
 		return TYPE;
 	}
 
+	private int loaded;
+	private int total;
+
+	public ProgressEvent(int loaded, int total) {
+		this.loaded = loaded;
+		this.total = total;
+	}
+
 	@Override
 	public com.google.gwt.event.shared.GwtEvent.Type<Handler> getAssociatedType() {
 		return TYPE;
 	}
 
+	public int getLoaded() {
+		return loaded;
+	}
+
+	public int getTotal() {
+		return total;
+	}
+
 	@Override
 	protected void dispatch(Handler handler) {
 		handler.onProgressEvent(this);
-
 	}
 }
