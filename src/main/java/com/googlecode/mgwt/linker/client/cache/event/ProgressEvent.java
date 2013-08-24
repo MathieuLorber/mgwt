@@ -35,10 +35,12 @@ public class ProgressEvent extends GwtEvent<ProgressEvent.Handler> {
 		return TYPE;
 	}
 
-	private Integer loaded;
-	private Integer total;
+	private boolean lengthComputable;
+	private int loaded;
+	private int total;
 
-	public ProgressEvent(Integer loaded, Integer total) {
+	public ProgressEvent(boolean lengthComputable, int loaded, int total) {
+		this.lengthComputable = lengthComputable;
 		this.loaded = loaded;
 		this.total = total;
 	}
@@ -48,11 +50,15 @@ public class ProgressEvent extends GwtEvent<ProgressEvent.Handler> {
 		return TYPE;
 	}
 
-	public Integer getLoaded() {
+	public boolean isLengthComputable() {
+		return lengthComputable;
+	}
+
+	public int getLoaded() {
 		return loaded;
 	}
 
-	public Integer getTotal() {
+	public int getTotal() {
 		return total;
 	}
 
