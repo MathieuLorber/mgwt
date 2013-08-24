@@ -35,10 +35,10 @@ public class ProgressEvent extends GwtEvent<ProgressEvent.Handler> {
 		return TYPE;
 	}
 
-	private Integer loaded;
-	private Integer total;
+	private int loaded;
+	private int total;
 
-	public ProgressEvent(Integer loaded, Integer total) {
+	public ProgressEvent(int loaded, int total) {
 		this.loaded = loaded;
 		this.total = total;
 	}
@@ -48,11 +48,11 @@ public class ProgressEvent extends GwtEvent<ProgressEvent.Handler> {
 		return TYPE;
 	}
 
-	public Integer getLoaded() {
+	public int getLoaded() {
 		return loaded;
 	}
 
-	public Integer getTotal() {
+	public int getTotal() {
 		return total;
 	}
 
